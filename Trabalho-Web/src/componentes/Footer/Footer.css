@@ -1,33 +1,15 @@
 .footer {
-    background-color: #f0f0f0;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .footer-email,
-  .footer-whatsapp {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-email a,
-  .footer-whatsapp a {
-    display: block;
-    font-size: 18px;
-    margin-top: 8px;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .footer-email a:hover,
-  .footer-whatsapp a:hover {
-    text-decoration: underline;
-  }
-  
+   background-color: #279cd6;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-email, .footer-whatsapp {
+  margin: 0 10px;
+}
