@@ -1,39 +1,34 @@
-import './index.css'
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import './index.css'; // Importe o arquivo de estilos do aplicativo
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//pages
-import Home from './pages/Home'
-import Sobre from './pages/Sobre'
-import Produtos from './pages/Produtos'
-import Contato from './pages/Contato'
+// Páginas
+import Home from './pages/Home';
+import Sobre from './pages/Sobre';
+import Produtos from './pages/Produtos/Produtos';
+import Contato from './pages/Contato/Contato';
 
-
-//components
-import NavBar from './componentes/NavBar';
+// Componentes
+import NavBar from './componentes/NavBar/NavBar';
+import Footer from './componentes/Footer/Footer';
 
 function App() {
-  
-
   return (
-    <>
-
-    <BrowserRouter>
-
-    <NavBar />
-    
-    <Routes>
-
-    <Route path='/' element={<Home />} />
-    <Route path='/sobre' element={<Sobre />} />
-    <Route path='/produtos' element={<Produtos />} />
-    <Route path='/contato' element={<Contato />} />
-
-    </Routes>
-    
-    </BrowserRouter>
+    <div className="app-container">
+      <BrowserRouter>
+        <NavBar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/produtos" element={<Produtos />} />
+            <Route path="/contato" element={<Contato />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
       
-    </>
-  )
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

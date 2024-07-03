@@ -22,13 +22,13 @@ Trabalho  <span>React</span>
 </li>
 
 <li>
-    <NavLink to="/sobre">
+    <NavLink to="/produtos">
         Produtos
     </NavLink>
 </li>
 
 <li>
-    <NavLink to="/produtos">
+    <NavLink to="/sobre">
         Sobre
     </NavLink>
 </li>
