@@ -20,12 +20,12 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-email">
           <p>Entre em contato via email:</p>
-          <a href={`mailto:${contactEmail}`}>{contactEmail || 'contato@exemplo.com'}</a>
+          <a href={`mailto:${contactEmail}`}>{contactEmail || 'Adicione um email no cadastro'}</a>
         </div>
         <div className="footer-whatsapp">
           <p>Entre em contato via WhatsApp:</p>
           <a href={`https://api.whatsapp.com/send?phone=${contactPhone}`} target="_blank" rel="noopener noreferrer">
-            {contactPhone || '12 3456-7890'}
+            {contactPhone || 'Adicione um telefone no cadastro'}
           </a>
         </div>
       </div>

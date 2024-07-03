@@ -1,7 +1,19 @@
 .footer {
-   background-color: #279cd6;
+  background-color: #ccc;
   padding: 20px;
   text-align: center;
+}
+
+.footer p{
+  color: black
+}
+
+.footer a{
+  color: rgb(52, 51, 51)
+}
+
+.footer a:hover{
+  color: black
 }
 
 .footer-content {

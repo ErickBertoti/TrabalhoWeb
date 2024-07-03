@@ -1,9 +1,9 @@
-import './index.css'; // Importe o arquivo de estilos do aplicativo
+import './index.css'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Páginas
-import Home from './pages/Home';
-import Sobre from './pages/Sobre';
+import Home from './pages/Home/Home';
+import Sobre from './pages/Sobre/Sobre';
 import Produtos from './pages/Produtos/Produtos';
 import Contato from './pages/Contato/Contato';
 
