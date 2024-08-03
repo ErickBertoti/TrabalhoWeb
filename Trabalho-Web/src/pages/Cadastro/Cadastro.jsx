@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './Contato.css';
+import './Cadastro.css';
 
-const Contato = () => {
+const Cadastro = ({ onAddAluno }) => {
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
+  const [idade, setIdade] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [confirm, setConfirm] = useState(false);
@@ -11,7 +12,7 @@ const Contato = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (email.trim() === '' || telefone.trim() === '') {
+    if (nome.trim() === '' || email.trim() === '' || idade.trim() === '') {
       setError('Por favor, preencha todos os campos.');
       return;
     }
@@ -21,24 +22,20 @@ const Contato = () => {
       return;
     }
 
-    // Se chegou até aqui, não há erros
     setError('');
     setConfirm(true);
   };
 
   const handleConfirm = () => {
-    // Salvando no Local Storage
-    const contactData = { email, telefone };
-    localStorage.setItem('contact', JSON.stringify(contactData));
+    const alunoData = { nome, email, idade };
+    onAddAluno(alunoData); // Adiciona o aluno ao estado do componente pai
 
-    // Limpando os campos e mostrando sucesso
+    setNome('');
     setEmail('');
-    setTelefone('');
+    setIdade('');
     setSuccess('Dados enviados com sucesso!');
     setConfirm(false);
   };
-
-  
 
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
@@ -47,8 +44,17 @@ const Contato = () => {
 
   return (
     <div className="contact-form">
-      <h2>Formulário de Contato</h2>
+      <h2>Cadastro de Aluno</h2>
       <form onSubmit={handleSubmit}>
+        <div className="form-control">
+          <label htmlFor="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
         <div className="form-control">
           <label htmlFor="email">Email:</label>
           <input
@@ -59,12 +65,12 @@ const Contato = () => {
           />
         </div>
         <div className="form-control">
-          <label htmlFor="telefone">Telefone:</label>
+          <label htmlFor="idade">Idade:</label>
           <input
-            type="text"
-            id="telefone"
-            value={telefone}
-            onChange={(e) => setTelefone(e.target.value)}
+            type="number"
+            id="idade"
+            value={idade}
+            onChange={(e) => setIdade(e.target.value)}
           />
         </div>
         {error && <p className="error-message">{error}</p>}
@@ -83,4 +89,4 @@ const Contato = () => {
   );
 };
 
-export default Contato;
+export default Cadastro;

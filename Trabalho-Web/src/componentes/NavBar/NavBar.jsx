@@ -8,7 +8,7 @@ const NavBar = () => {
 
 <NavLink to="/" className="brand">
 
-Trabalho  <span>React</span>
+<span>Atividade Diagnóstica</span>
 
 </NavLink>
 
@@ -22,20 +22,14 @@ Trabalho  <span>React</span>
 </li>
 
 <li>
-    <NavLink to="/produtos">
-        Produtos
+    <NavLink to="/cadastro">
+        Cadastro
     </NavLink>
 </li>
 
 <li>
-    <NavLink to="/sobre">
-        Sobre
-    </NavLink>
-</li>
-
-<li>
-    <NavLink to="/contato">
-        Contato
+    <NavLink to="/aluno">
+        Alunos
     </NavLink>
 </li>
 

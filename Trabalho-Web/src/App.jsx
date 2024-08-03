@@ -1,17 +1,24 @@
+import React, { useState } from 'react';
 import './index.css'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Páginas
 import Home from './pages/Home/Home';
-import Sobre from './pages/Sobre/Sobre';
-import Produtos from './pages/Produtos/Produtos';
-import Contato from './pages/Contato/Contato';
-
+import Aluno from './pages/Aluno/Aluno';
+import Cadastro from './pages/Cadastro/Cadastro';
 // Componentes
 import NavBar from './componentes/NavBar/NavBar';
 import Footer from './componentes/Footer/Footer';
 
 function App() {
+  // Estado para gerenciar a lista de alunos
+  const [alunos, setAlunos] = useState([]);
+
+  // Função para adicionar um novo aluno à lista
+  const handleAddAluno = (novoAluno) => {
+    setAlunos([...alunos, novoAluno]);
+  };
+
   return (
     <div className="app-container">
       <BrowserRouter>
@@ -19,13 +26,17 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path="/contato" element={<Contato />} />
+            <Route 
+              path="/aluno" 
+              element={<Aluno alunos={alunos} />} 
+            />
+            <Route 
+              path="/cadastro" 
+              element={<Cadastro onAddAluno={handleAddAluno} />} 
+            />
           </Routes>
         </div>
       </BrowserRouter>
-      
       <Footer />
     </div>
   );

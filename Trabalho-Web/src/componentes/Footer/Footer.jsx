@@ -19,14 +19,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-email">
-          <p>Entre em contato via email:</p>
-          <a href={`mailto:${contactEmail}`}>{contactEmail || 'Adicione um email no cadastro'}</a>
-        </div>
-        <div className="footer-whatsapp">
-          <p>Entre em contato via WhatsApp:</p>
-          <a href={`https://api.whatsapp.com/send?phone=${contactPhone}`} target="_blank" rel="noopener noreferrer">
-            {contactPhone || 'Adicione um telefone no cadastro'}
-          </a>
+          <p>Desenvolvido por Erick Hoffmann</p>
         </div>
       </div>
     </footer>
